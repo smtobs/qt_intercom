@@ -10,11 +10,11 @@ class ImageReciver : public QObject
 {
     Q_OBJECT
 public:
-    explicit ImageReciver( QObject *parent = nullptr);
+    explicit ImageReciver( QObject* parent = nullptr);
     ~ImageReciver();
 
 signals:
-    void GenerateImage(int val);
+    void GenerateWebCamImage(const QString& image_path);
 
 private slots:
     void ReadPendingDatagrams();

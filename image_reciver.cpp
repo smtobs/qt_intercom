@@ -25,9 +25,9 @@ void ImageReciver::ReadPendingDatagrams()
         quint16 senderPort;
         socket->readDatagram(datagram.data(), datagram.size(), &sender, &senderPort);
 
-        if ((this->SaveImage(datagram, "/tmp/image.jpg")) == true)
+        if ((this->SaveImage(datagram, this->image_path)) == true)
         {
-            emit this->GenerateImage(3);
+            emit this->GenerateWebCamImage(this->image_path);
             qDebug() << "File Save Success : " << this->image_path;
         }
     }
