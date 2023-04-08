@@ -20,13 +20,15 @@ SOURCES += \
     image_reciver.cpp \
     main.cpp \
     mainwindow.cpp \
-    mqtt_iface.cpp
+    mqtt_iface.cpp \
+    weather.cpp
 
 HEADERS += \
     image_reciver.hpp \
     mainwindow.h \
     mqtt_callback.hpp \
-    mqtt_iface.hpp
+    mqtt_iface.hpp \
+    weather.hpp
 
 FORMS += \
     mainwindow.ui
@@ -56,3 +58,6 @@ else:unix: LIBS += -L$$PWD/../../../../usr/local/lib/ -lpaho-mqttpp3
 
 INCLUDEPATH += $$PWD/../../../../usr/local/include
 DEPENDPATH += $$PWD/../../../../usr/local/include
+
+RESOURCES += \
+    image.qrc
